@@ -1,0 +1,16 @@
+﻿生成启动时间为 2019/7/19 22:45:35。
+     1>项目“D:\代码\SList_Practice\SList_Practice\SList_Practice.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\vs\新建文件夹\VC\bin\CL.exe /c /I"D:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c
+         main.c
+     1>d:\代码\slist_practice\slist_practice\main.c(9): warning C4101: “tmp”: 未引用的局部变量
+     1>d:\代码\slist_practice\slist_practice\main.c(10): warning C4101: “tmp2”: 未引用的局部变量
+       Link:
+         D:\vs\新建文件夹\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\代码\SList_Practice\Debug\SList_Practice.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\代码\SList_Practice\Debug\SList_Practice.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\代码\SList_Practice\Debug\SList_Practice.lib" /MACHINE:X86 Debug\main.obj
+         Debug\SListP.obj
+         SList_Practice.vcxproj -> D:\代码\SList_Practice\Debug\SList_Practice.exe
+     1>已完成生成项目“D:\代码\SList_Practice\SList_Practice\SList_Practice.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.82
