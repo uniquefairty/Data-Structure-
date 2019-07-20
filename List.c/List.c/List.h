@@ -19,18 +19,20 @@ typedef struct List
 
 void ListInit(List *plist);
 void ListPushBack(List *plist, LTDataType x);//后插
-void ListPopBack(List *plist, LTDataType x);//后删
+void ListPopBack(List *plist);//后删
 
 void ListPushFront(List *plist, LTDataType x);//前插
-void ListPopFront(List *plist, LTDataType x);//前删
+void ListPopFront(List *plist);//前删
 
 ListNode *ListFind(List *plist, LTDataType x);
 
 void ListInsertFront(ListNode *pos, LTDataType x);//在pos位前面插入
 void ListInsertAfter(ListNode *pos, LTDataType x);//在pos位后面插入
 
-void ListErase(ListNode *pos);
-void ListRemove(List *plist, LTDataType x);
+void ListErase(ListNode *pos);//删除pos位置的节点
+void ListRemove(List *plist, LTDataType x);//移除p值为x的节点
+
+void ListDestory(List *plist);//摧毁
 
 void ListPrint(List *plist);
 

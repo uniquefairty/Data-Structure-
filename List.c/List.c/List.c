@@ -6,19 +6,31 @@ void ListInit(List *plist)
 	plist->_head->_next = plist->_head;
 	plist->_head->_prev = plist->_head;
 }
+
+void ListDestory(List *plist)//摧毁
+{
+	while (plist->_head != plist->_head->_next)
+	{
+		ListPopFront(plist);
+	}
+	free(plist->_head);
+	plist->_head = NULL;
+
+}
+
 void ListPushBack(List *plist, LTDataType x)//后插
 {
-	ListInsertFront(&plist->_head,x);
+	ListInsertFront(plist->_head,x);
 }
-void ListPopBack(List *plist, LTDataType x)//后删
+void ListPopBack(List *plist)//后删
 {
 	ListErase(plist->_head ->_prev);
 }
 void ListPushFront(List *plist, LTDataType x)//前插
 {
-	ListInsertAfter(&plist->_head , x);
+	ListInsertAfter(plist->_head , x);
 }
-void ListPopFront(List *plist, LTDataType x)//前删
+void ListPopFront(List *plist)//前删
 {
 	ListErase(plist->_head->_next );
 
@@ -38,6 +50,7 @@ ListNode *ListFind(List *plist, LTDataType x)
 }
 void ListInsertFront(ListNode *pos, LTDataType x)//在pos位前面插入
 {
+#if 1
 	ListNode *cur = (ListNode *)malloc(sizeof(ListNode));
 	ListNode *tmp = pos->_prev;
 
@@ -47,20 +60,25 @@ void ListInsertFront(ListNode *pos, LTDataType x)//在pos位前面插入
 	cur->_next = pos;
 	tmp->_next = cur;
 	cur->_prev = tmp;
-
+#else
+	ListNode *tmp = (ListNode *)malloc(sizeof(ListNode));
 	/*tmp->_data = x;
-	tmp->prev = pos->prev;
-	tmp->prev->_next = tmp;
+	tmp->_prev = pos->_prev;
+	tmp->_prev->_next = tmp;
 	tmp->_next = pos;
-	pos->prev = tmp;*/
-	/*tmp->_next = pos;
-	tmp->prev = pos->prev;
-	pos->prev = tmp;
-	tmp->prev->_next = tmp;*/
+	pos->_prev = tmp;*/
+
+	tmp->_data = x;
+	tmp->_next = pos;
+	tmp->_prev = pos->_prev;
+	pos->_prev = tmp;
+	tmp->_prev->_next = tmp;
+#endif
 }
 
 void ListInsertAfter(ListNode *pos, LTDataType x)//在pos位后面插入
 {
+#if 1
 	ListNode *cur = (ListNode *)malloc(sizeof(ListNode));
 	ListNode *tmp = pos->_next;
 
@@ -71,12 +89,14 @@ void ListInsertAfter(ListNode *pos, LTDataType x)//在pos位后面插入
 	tmp->_prev = cur;
 	cur->_next = tmp;
 
-	/*ListNode *tmp = (ListNode *)malloc(sizeof(ListNode));
+#else
+	ListNode *tmp = (ListNode *)malloc(sizeof(ListNode));
 	tmp->_data = x;
 	tmp->_prev = pos;
 	tmp->_next = pos->_next;
 	pos->_next = tmp;
-	tmp->_next->_prev = tmp;*/
+	tmp->_next->_prev = tmp;
+#endif
 }
 
 void ListErase(ListNode *pos)
@@ -87,7 +107,7 @@ void ListErase(ListNode *pos)
 }
 void ListRemove(List *plist, LTDataType x)
 {
-	ListNode *tmp = ListFind(&plist,x);
+	ListNode *tmp = ListFind(plist,x);
 	if (tmp)
 	{
 		ListErase(tmp);
@@ -103,7 +123,5 @@ void ListPrint(List *plist)
 	{
 		printf("%d->", cur->_data);
 	}
-	printf("Head");
+	printf("Head\n");
 }
-
-//svn
