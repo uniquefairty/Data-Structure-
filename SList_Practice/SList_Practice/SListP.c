@@ -20,6 +20,16 @@ void SListPushFront(SListNode **pphead, SLTDataType x)
 	tmp->next = *pphead;
 	*pphead = tmp;
 }
+void SListEraseAfter(SListNode *pos)//后删
+{
+	SListNode*tmp = pos->next;
+	if (tmp == NULL)
+	{
+		return;
+	}
+	pos->next = tmp->next;
+	free(tmp);
+}
 void SListPrint(SListNode *phead)
 {
 	SListNode *tmp = phead;
@@ -35,15 +45,15 @@ void SListPrint(SListNode *phead)
 //反转一个单链表
 void reaversal(SListNode **pphead)//不断后删前插操作
 {
-	SListNode *head = *pphead;//
-	SListNode *oldp = head;//
-	SListNode *tmp = NULL;
-	while (oldp->next)
+	SListNode *head = *pphead;//此指针在每次循环中始终指向当前链表的头
+	SListNode *oldp = head;//此指针在每次循环中始终指向原本的头节点，不会改变方向
+	SListNode *tmp = head->next;//此指针在每次循环中始终指向要被后删再头插的节点
+	while (tmp)//如果tmp为空，则代表逆序结束，旧头的next已经是空的了，成为新链表的尾
 	{
-		tmp = oldp->next;
-		oldp->next = tmp->next;
-		tmp->next = head;
-		head = tmp;
+		oldp->next = tmp->next;//将tmp架空，实际是后删操作的一部分
+		tmp->next = head;//将tmp变成新的头，实际是头插操作的一部分
+		head = tmp;//换头
+		tmp = oldp->next;//让tmp变成下次循环中待删除的节点
 	}
 	*pphead = head;
 }
@@ -102,10 +112,8 @@ SListNode *getIntersectionNode(SListNode *headA, SListNode *headB)
 
 SListNode *detectCycle(SListNode *phead)
 {
-	
 	SListNode *fast = phead;
 	SListNode *slow = phead;
-
 	while (fast&&slow&&fast->next)
 	{
 		fast = fast->next->next;

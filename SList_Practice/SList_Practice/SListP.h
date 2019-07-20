@@ -18,6 +18,7 @@ SListNode* BuySLiseNode(SLTDataType x);
 void SListPushFront(SListNode **pphead, SLTDataType x);
 
 void SListPrint(SListNode *phead);
+void SListEraseAfter(SListNode *pos);//∫Û…æ
 
 void reaversal(SListNode **pphead);
 void reaversal_1(SListNode **pphead);
@@ -26,9 +27,7 @@ void reaversal_1(SListNode **pphead);
 SListNode *getIntersectionNode(SListNode *headA, SListNode *headB);
 
 SListNode *detectCycle(SListNode *phead);
-//void Fun9(SListNode **pphead, SListNode **pphead1);
 
-//void Fun10(SListNode **pphead, SListNode **pphead1);
 
 
 
