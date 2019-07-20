@@ -125,3 +125,57 @@ void ListPrint(List *plist)
 	}
 	printf("Head\n");
 }
+
+//******************************************************************
+//在一个有序的链表中，删除重复的结点，重复的结点不保留
+void deleteDuplication(List* plist)
+{
+	ListNode *cur;
+	for (cur = plist->_head->_next; cur != plist->_head->_prev;)
+	{
+		if (cur->_data == cur->_next->_data)
+		{
+			ListErase(cur->_next);//不能删掉cur，若删掉cur，下次循环就找不到cur的值，或者可以执行删除下一个节点操作
+		}
+		else
+		{
+			cur = cur->_next;
+		}
+	}
+}
+//********************************************************************
+//将两个有序链表合并为一个新的有序链表并返回，新链表是通过拼接给定的两个链表的所有节点
+ListNode* mergeTwoLists(List *plist, List* plist2)
+{
+	ListNode *cur1=plist->_head->_next;
+	ListNode *cur2=plist2->_head->_next;
+	ListNode *tmp;
+
+	while (cur1!=plist->_head  &&cur2!=plist->_head )//双链表遍历的跳出条件
+	{
+		if (cur1->_data < cur2->_data)
+		{
+			cur1 = cur1->_next;
+		}
+		else
+		{
+			tmp = cur2;//要把cur2插进list中，保护在list2中遍历的指针
+			cur2 = cur2->_next;//指向下次需要比较的节点
+
+			cur1->_prev->_next = tmp;
+			tmp->_prev = cur1->_prev;
+			tmp->_next = cur1;
+			cur1->_prev = tmp;
+		}
+	}
+	//如果遍历结束后，list到末尾了，证明list2还没结束（两个肯定不会同时到末尾），而且list2剩下的节点都比list大，所以要把list2剩下的节点插进list的后面
+	if (cur1 == plist->_head)
+	{
+		cur1->_prev ->_next = cur2;
+		cur2->_prev = cur1->_prev;
+
+		cur1->_prev = plist2->_head->_prev;
+		plist2->_head->_prev->_next = cur1;
+	}
+	free(plist2->_head);
+}
