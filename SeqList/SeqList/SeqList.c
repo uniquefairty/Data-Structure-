@@ -55,7 +55,7 @@ void SeqListPushFront(SeqList *psl,SLDataType x)
 void SeqListPopFront(SeqList *psl)
 {
 	int i = 0;
-	for (i = 0; i <psl->size; i++)
+	for (i = 0; i <psl->size-1; i++)
 	{
 		psl->array[i] = psl->array[i+1];
 	}
