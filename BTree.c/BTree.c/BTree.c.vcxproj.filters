@@ -21,9 +21,15 @@
     <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="D:\代码\queue_1.c\queue_1.c\queue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Btree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
