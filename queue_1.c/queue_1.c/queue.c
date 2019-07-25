@@ -3,13 +3,19 @@
 void QueueInit(Queue *pq)
 {
 	pq->front=NULL;
-	pq->rear= pq->front;
+	pq->rear= NULL;
 }
 
 void QueueDestory(Queue *pq)
 {
-	pq->front = NULL;
-	pq->rear= NULL;
+	if (pq->front == NULL)
+	{
+	return;
+    }
+	while (pq->front)
+	{
+		QueuePop(pq);
+	}
 }
 
 void QueuePush(Queue *pq, QUDataType x)//后插
@@ -37,6 +43,7 @@ void QueuePop(Queue *pq)//头删
 	free(tmp);
 }
 
+//返回队列前面的的值
 QUDataType QueueFront(Queue *pq)
 {
 	if (pq->front == NULL)
@@ -55,6 +62,13 @@ QUDataType QueueBack(Queue *pq)
 	}
 	return pq->rear->data;
 }
+
+//判空
+int QueueEmpty(Queue *pq)
+{
+	return pq->front == NULL;
+}
+
 
 int QueueSize(Queue *pq)
 {

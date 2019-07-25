@@ -1,18 +1,20 @@
-﻿生成启动时间为 2019/7/23 19:43:29。
-     1>项目“D:\代码\queue_1.c\queue_1.c\queue_1.c.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2019/7/25 12:09:20。
+     1>项目“E:\githab代码\Data-Structure-\queue_1.c\queue_1.c\queue_1.c.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\vs\新建文件夹\VC\bin\CL.exe /c /I"D:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt queue.c
+         D:\vs\新建文件夹\VC\bin\CL.exe /c /I"D:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c queue.c
          queue.c
-     1>d:\代码\queue_1.c\queue_1.c\queue.c(45): warning C4033: “QueueFront”必须返回值
-     1>d:\代码\queue_1.c\queue_1.c\queue.c(54): warning C4033: “QueueBack”必须返回值
-     1>d:\代码\queue_1.c\queue_1.c\queue.c(48): warning C4715: “QueueFront”: 不是所有的控件路径都返回值
-     1>d:\代码\queue_1.c\queue_1.c\queue.c(57): warning C4715: “QueueBack”: 不是所有的控件路径都返回值
+     1>e:\githab代码\data-structure-\queue_1.c\queue_1.c\queue.c(52): warning C4033: “QueueFront”必须返回值
+     1>e:\githab代码\data-structure-\queue_1.c\queue_1.c\queue.c(61): warning C4033: “QueueBack”必须返回值
+         main.c
+         正在生成代码...
+     1>e:\githab代码\data-structure-\queue_1.c\queue_1.c\queue.c(55): warning C4715: “QueueFront”: 不是所有的控件路径都返回值
+     1>e:\githab代码\data-structure-\queue_1.c\queue_1.c\queue.c(64): warning C4715: “QueueBack”: 不是所有的控件路径都返回值
        Link:
-         D:\vs\新建文件夹\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\代码\queue_1.c\Debug\queue_1.c.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\代码\queue_1.c\Debug\queue_1.c.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\代码\queue_1.c\Debug\queue_1.c.lib" /MACHINE:X86 Debug\main.obj
+         D:\vs\新建文件夹\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\githab代码\Data-Structure-\queue_1.c\Debug\queue_1.c.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\githab代码\Data-Structure-\queue_1.c\Debug\queue_1.c.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\githab代码\Data-Structure-\queue_1.c\Debug\queue_1.c.lib" /MACHINE:X86 Debug\main.obj
          Debug\queue.obj
-         queue_1.c.vcxproj -> D:\代码\queue_1.c\Debug\queue_1.c.exe
-     1>已完成生成项目“D:\代码\queue_1.c\queue_1.c\queue_1.c.vcxproj”(Build 个目标)的操作。
+         queue_1.c.vcxproj -> E:\githab代码\Data-Structure-\queue_1.c\Debug\queue_1.c.exe
+     1>已完成生成项目“E:\githab代码\Data-Structure-\queue_1.c\queue_1.c\queue_1.c.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.83
+已用时间 00:00:02.64

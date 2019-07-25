@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include<Windows.h>
+#include<stdlib.h>
 
 typedef int QUDataType;
 
@@ -26,6 +27,8 @@ void QueuePop(Queue *pq);//м╥и╬
 
 QUDataType QueueFront(Queue *pq);
 QUDataType QueueBack(Queue *pq);
+
+int QueueEmpty(Queue *pq);//еп©у
 
 int QueueSize(Queue *pq);
 
