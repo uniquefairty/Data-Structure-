@@ -24,4 +24,13 @@ void BinaryTreePostOrder(BTNode *root);//后序遍历
 
 void BinaryTreeLevelOrder(BTNode *root);//层序遍历
 
+//非递归遍历
+void BinaryTreePrevOrderNonR(BTNode *root);//前序遍历
+void BinaryTreeInOrderNonR(BTNode *root);//中序遍历
+void BinaryTreePostOrderNonR(BTNode *root);//后序遍历
+
+//存结点地址
+
+
+
 #endif/*_BTREE_H_*/
