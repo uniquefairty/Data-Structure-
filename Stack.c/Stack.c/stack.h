@@ -30,6 +30,9 @@ void StackPush(Stack *ps, STDataType x);
 void StackPop(Stack *ps);
 
 STDataType StackTop(Stack *ps);
+
+int StackEmpty(Stack *ps);//1是非空 0是空
+
 int StackSize(Stack *ps);
 
 //********用两个栈实现队列*********

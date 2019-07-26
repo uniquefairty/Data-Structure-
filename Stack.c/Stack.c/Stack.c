@@ -38,12 +38,23 @@ void StackPush(Stack *ps, STDataType x)
 }
 void StackPop(Stack *ps)
 {
+	if (ps->top == 0)
+	{
+		return;
+	}
 	ps->top--;
 }
 STDataType StackTop(Stack *ps)
 {
 	return ps->a[ps->top-1];
 }
+
+int StackEmpty(Stack *ps)
+{
+	return ps->top != 0;
+}
+
+
 int StackSize(Stack *ps)
 {
 	return ps->top;
