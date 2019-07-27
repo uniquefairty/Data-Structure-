@@ -13,7 +13,8 @@ int main()
 	putchar('\n');*/
 	//BinaryTreePrevOrderNonR(testTree);
 	//putchar('\n');
-	BinaryTreePostOrderNonR(testTree);
+	//BinaryTreePostOrderNonR(testTree);
+	printf("%d",BinaryTreeComplete(testTree));
 	system("pause");
 	return 0;
 }

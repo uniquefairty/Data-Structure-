@@ -31,6 +31,10 @@ void BinaryTreePostOrderNonR(BTNode *root);//后序遍历
 
 //存结点地址
 
+// 判断二叉树是否是完全二叉树
+//右有左无不是//右空，剩下的节点都是叶子节点
+int BinaryTreeComplete(BTNode* root);
 
+void BinaryTreeDestory(BTNode* root);
 
 #endif/*_BTREE_H_*/
