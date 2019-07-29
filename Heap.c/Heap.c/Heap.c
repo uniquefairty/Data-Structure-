@@ -5,7 +5,7 @@ void Swap(HPDataType *a, HPDataType *b)
 	HPDataType tmp;
 	tmp = *a;
 	*a = *b;
-	*b = *a;
+	*b = tmp;
 }
 void DownAdjust(Heap *hp, int n)//堆向下调整法
 {
